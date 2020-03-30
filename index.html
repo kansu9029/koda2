@@ -1,9 +1,827 @@
 <html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.1/js/jquery.tablesorter.min.js"></script>
+<script src="./sort.js"></script>
 <head>
-<meta charset="utf-8">
-<title>タイトル</title>
+    <title>禍つヴァールハイト適当攻略</title>
+    <link rel="stylesheet" href = "./style.css" id = "mystyle"/>
+    <script type="text/javascript"> 
+        $(function() {
+            $("div").load("./header.html");
+        });
+    </script>
 </head>
 <body>
-本文
+    <div id="header-bk">
+        <div style="float:left;">
+            <ul>
+                <li><a class ="tab_btn" href="#home">Home</a></li>
+                <li><a class="active" class ="tab_btn" href="#soubi">装備</a></li>
+                <li><a class ="tab_btn" href="koryaku.html">攻略</a></li>
+                <li><a class ="tab_btn" href="schedule.html">スケジュール</a></li>
+                <li><a class ="tab_btn" href="#news">お知らせ</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="tab_item is-active-item" id="item1">最大進化・レベルマのものです_(:3」∠)_</div>
+    <div class="tab_item" id="item2">2番目のコンテンツ</div>
+    <div class="tab_item" id="item3">3番目のコンテンツ</div>
+
+    <div calss="box11">
+        <div class="leftside">
+            <h2>☆装備一覧☆</h2>
+            <div id="body-bk">
+                <div id="body">
+                    <details open="true">
+                        <summary class="leftside">武器一覧</summary>
+                        <br>
+                        <table class="type06" id="sampleTable">
+                            <col width="10%">
+                            <col span=14 width="5%">
+                            <tr class="colTitle">
+                                <th rowspan="2" cmanSortBtn>名称</th>
+                                <th rowspan="2">武器種<br>
+                                    <select id="weaponSelect" onChange="goFilter();">
+                                        <option value="all">全て</option>
+                                        <option value="ken">剣</option>
+                                        <option value="tate">盾</option>
+                                        <option value="edge">刃</option>
+                                        <option value="book">本</option>
+                                        <option value="tue">杖</option>
+                                        <option value="gun">銃</option>
+                                    </select>
+                                </th>
+                                <th rowspan="2">属性<br>
+                                    <select id="zokuseiSelect" onChange="goFilter();">
+                                        <option value="all">全て</option>
+                                        <option value="mu">無</option>
+                                        <option value="hi">火</option>
+                                        <option value="mizu">水</option>
+                                        <option value="kaze">風</option>
+                                        <option value="kaminari">雷</option>
+                                        <option value="tuti">土</option>
+                                        <option value="hikari">光</option>
+                                        <option value="yami">闇</option>
+                                    </select>
+                                </th>
+                                <th rowspan="2" cmanSortBtn>属性値</th>
+                                <th rowspan="2" cmanSortBtn>HP</th>
+                                <th rowspan="2" cmanSortBtn>物攻</th>
+                                <th rowspan="2" cmanSortBtn>特攻</th>
+                                <th rowspan="2" cmanSortBtn>物防</th>
+                                <th rowspan="2" cmanSortBtn>特防</th>
+                                <th rowspan="2" cmanSortBtn>会心率</th>
+                                <th rowspan="2" cmanSortBtn>会心威</th>
+                                <th rowspan="2" cmanSortBtn>命中</th>
+                                <th rowspan="2" cmanSortBtn>回避</th>
+                                <th rowspan="2" cmanSortBtn>運</th>
+                                <th rowspan="2">スキル情報</th>
+                            </tr>
+                            <tbody>
+                                <tr ken mizu>
+                                    <td>機・ヴァルハイトブレード</td>
+                                    <td>剣</td>
+                                    <td>水</td>
+                                    <td>162</td>
+                                    <td>0</td>
+                                    <td>2093</td>
+                                    <td>1384</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>125</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td><a href="./var_skill.html#機・ヴァルハイトブレード" class="btn-sticky" disabled="true"  target="_blank">詳細</a></td>
+                                </tr>
+                                <tr ken kaminari>
+                                    <td>光・ヴァルハイトブレード</td>
+                                    <td>剣</td>
+                                    <td>雷</td>
+                                    <td>162</td>
+                                    <td>0</td>
+                                    <td>2093</td>
+                                    <td>1384</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>125</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td><a href="./var_skill.html#光・ヴァルハイトブレード" class="btn-sticky" disabled="true" target="_blank">詳細</a></td>
+                                </tr>
+                                <tr tate kaze>
+                                    <td>機・ヴァルハイトシールド</td>
+                                    <td>盾</td>
+                                    <td>風</td>
+                                    <td>162</td>
+                                    <td>0</td>
+                                    <td>1634</td>
+                                    <td>1333</td>
+                                    <td>470</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>142</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td><a href="./var_skill.html#機・ヴァルハイトシールド" class="btn-sticky" disabled="true" target="_blank">詳細</a></td>
+                                </tr>
+                                <tr tate kaminari>
+                                    <td>光・ヴァルハイトシールド</td>
+                                    <td>盾</td>
+                                    <td>雷</td>
+                                    <td>162</td>
+                                    <td>0</td>
+                                    <td>1634</td>
+                                    <td>1333</td>
+                                    <td>470</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>142</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td><a href="./var_skill.html#光・ヴァルハイトシールド" class="btn-sticky" disabled="true" target="_blank">詳細</a></td>
+                                </tr>
+                                <tr tue yami>
+                                    <td>機・ヴァルハイトロッド</td>
+                                    <td>杖</td>
+                                    <td>闇</td>
+                                    <td>162</td>
+                                    <td>0</td>
+                                    <td>1232</td>
+                                    <td>2259</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>125</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td><a href="./var_skill.html#機・ヴァルハイトロッド" class="btn-sticky" disabled="true" target="_blank">詳細</a></td>
+                                </tr>
+                                <tr tue tuti>
+                                    <td>光・ヴァルハイトロッド</td>
+                                    <td>杖</td>
+                                    <td>土</td>
+                                    <td>162</td>
+                                    <td>0</td>
+                                    <td>1232</td>
+                                    <td>2259</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>125</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td><a href="./var_skill.html#光・ヴァルハイトロッド" class="btn-sticky" disabled="true" target="_blank">詳細</a></td>
+                                </tr>
+                                <tr book mizu>
+                                    <td>機・ヴァルハイトブック</td>
+                                    <td>本</td>
+                                    <td>水</td>
+                                    <td>162</td>
+                                    <td>0</td>
+                                    <td>1198</td>
+                                    <td>1504</td>
+                                    <td>0</td>
+                                    <td>470</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>135</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td><a href="./var_skill.html#機・ヴァルハイトブック" class="btn-sticky" disabled="true" target="_blank">詳細</a></td>
+                                </tr>
+                                <tr book yami>
+                                    <td>光・ヴァルハイトブック</td>
+                                    <td>本</td>
+                                    <td>闇</td>
+                                    <td>162</td>
+                                    <td>0</td>
+                                    <td>1198</td>
+                                    <td>1504</td>
+                                    <td>0</td>
+                                    <td>470</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>135</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td><a href="./var_skill.html#光・ヴァルハイトブック" class="btn-sticky" disabled="true" target="_blank">詳細</a></td>
+                                </tr>
+                                <tr gun tuti>
+                                    <td>機・ヴァルハイトガン</td>
+                                    <td>銃</td>
+                                    <td>土</td>
+                                    <td>162</td>
+                                    <td>0</td>
+                                    <td>1180</td>
+                                    <td>1708</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>47</td>
+                                    <td>47</td>
+                                    <td>149</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td><a href="./var_skill.html#機・ヴァルハイトガン" class="btn-sticky" disabled="true" target="_blank">詳細</a></td>
+                                </tr>
+                                <tr gun kaze>
+                                    <td>光・ヴァルハイトガン</td>
+                                    <td>銃</td>
+                                    <td>風</td>
+                                    <td>162</td>
+                                    <td>0</td>
+                                    <td>1180</td>
+                                    <td>1708</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>47</td>
+                                    <td>47</td>
+                                    <td>149</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td><a href="./var_skill.html#光・ヴァルハイトガン" class="btn-sticky" disabled="true" target="_blank">詳細</a></td>
+                                </tr>
+                                <tr edge kaze>
+                                    <td>機・ヴァルハイトエッジ</td>
+                                    <td>刃</td>
+                                    <td>闇</td>
+                                    <td>162</td>
+                                    <td>0</td>
+                                    <td>1708</td>
+                                    <td>1182</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>47</td>
+                                    <td>47</td>
+                                    <td>149</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td><a href="./var_skill.html#機・ヴァルハイトエッジ" class="btn-sticky" disabled="true" target="_blank">詳細</a></td>
+                                </tr>
+                                <tr edge yami>
+                                    <td>光・ヴァルハイトエッジ</td>
+                                    <td>刃</td>
+                                    <td>闇</td>
+                                    <td>162</td>
+                                    <td>0</td>
+                                    <td>1708</td>
+                                    <td>1182</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>47</td>
+                                    <td>47</td>
+                                    <td>149</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td><a href="./var_skill.html#光・ヴァルハイトエッジ" class="btn-sticky" disabled="true" target="_blank">詳細</a></td>
+                                </tr>
+                                <tr ken hikari>
+                                    <td>機・シュネルカイトブレード</td>
+                                    <td>剣</td>
+                                    <td>光</td>
+                                    <td>162</td>
+                                    <td>0</td>
+                                    <td>2016</td>
+                                    <td>1461</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>126</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td><a href="./shunelkight.html#機・シュネルカイトブレード" class="btn-sticky" disabled="true" target="_blank">詳細</a></td>
+                                </tr>
+                                <tr ken kaminari>
+                                    <td>光・シュネルカイトブレード</td>
+                                    <td>剣</td>
+                                    <td>雷</td>
+                                    <td>162</td>
+                                    <td>0</td>
+                                    <td>2016</td>
+                                    <td>1461</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>126</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td><a href="./shunelkight.html#光・シュネルカイトブレード" class="btn-sticky" disabled="true" target="_blank">詳細</a></td>
+                                </tr>
+                                <tr tate hikari>
+                                    <td>機・シュネルカイトシールド</td>
+                                    <td>盾</td>
+                                    <td>光</td>
+                                    <td>162</td>
+                                    <td>0</td>
+                                    <td>1568</td>
+                                    <td>1407</td>
+                                    <td>470</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>144</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td><a href="./shunelkight.html#機・シュネルカイトシールド" class="btn-sticky" disabled="true" target="_blank">詳細</a></td>
+                                </tr>
+                                <tr tate kaminari>
+                                    <td>光・シュネルカイトシールド</td>
+                                    <td>盾</td>
+                                    <td>雷</td>
+                                    <td>162</td>
+                                    <td>0</td>
+                                    <td>1568</td>
+                                    <td>1407</td>
+                                    <td>470</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>144</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td><a href="./shunelkight.html#光・シュネルカイトシールド" class="btn-sticky" disabled="true" target="_blank">詳細</a></td>
+                                </tr>
+                                <tr tue hikari>
+                                    <td>機・シュネルカイトロッド</td>
+                                    <td>杖</td>
+                                    <td>光</td>
+                                    <td>162</td>
+                                    <td>0</td>
+                                    <td>1301</td>
+                                    <td>2177</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>126</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td><a href="./shunelkight.html#機・シュネルカイトロッド" class="btn-sticky" disabled="true" target="_blank">詳細</a></td>
+                                </tr>
+                                <tr tue kaminari>
+                                    <td>光・シュネルカイトロッド</td>
+                                    <td>杖</td>
+                                    <td>雷</td>
+                                    <td>162</td>
+                                    <td>0</td>
+                                    <td>1301</td>
+                                    <td>2177</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>126</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td><a href="./shunelkight.html#光・シュネルカイトロッド" class="btn-sticky" disabled="true" target="_blank">詳細</a></td>
+                                </tr>
+                                <tr book hikari>
+                                    <td>機・シュネルカイトブック</td>
+                                    <td>本</td>
+                                    <td>光</td>
+                                    <td>162</td>
+                                    <td>0</td>
+                                    <td>1264</td>
+                                    <td>1442</td>
+                                    <td>0</td>
+                                    <td>470</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>137</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td><a href="./shunelkight.html#機・シュネルカイトブック" class="btn-sticky" disabled="true" target="_blank">詳細</a></td>
+                                </tr>
+                                <tr book kaminari>
+                                    <td>光・シュネルカイトブック</td>
+                                    <td>本</td>
+                                    <td>雷</td>
+                                    <td>162</td>
+                                    <td>0</td>
+                                    <td>1264</td>
+                                    <td>1442</td>
+                                    <td>0</td>
+                                    <td>470</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>137</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td><a href="./shunelkight.html#光・シュネルカイトブック" class="btn-sticky" disabled="true" target="_blank">詳細</a></td>
+                                </tr>
+                                <tr gun hikari>
+                                    <td>機・シュネルカイトカノン</td>
+                                    <td>銃</td>
+                                    <td>光</td>
+                                    <td>162</td>
+                                    <td>0</td>
+                                    <td>1246</td>
+                                    <td>1639</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>47</td>
+                                    <td>47</td>
+                                    <td>150</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td><a href="./shunelkight.html#機・シュネルカイトカノン" class="btn-sticky" disabled="true" target="_blank">詳細</a></td>
+                                </tr>
+                                <tr gun kaminari>
+                                    <td>光・シュネルカイトカノン</td>
+                                    <td>銃</td>
+                                    <td>雷</td>
+                                    <td>162</td>
+                                    <td>0</td>
+                                    <td>1246</td>
+                                    <td>1639</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>47</td>
+                                    <td>47</td>
+                                    <td>150</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td><a href="./shunelkight.html#光・シュネルカイトカノン" class="btn-sticky" disabled="true" target="_blank">詳細</a></td>
+                                </tr>
+                                <tr edge hikari>
+                                    <td>機・シュネルカイトエッジ</td>
+                                    <td>刃</td>
+                                    <td>光</td>
+                                    <td>162</td>
+                                    <td>0</td>
+                                    <td>1639</td>
+                                    <td>1248</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>47</td>
+                                    <td>47</td>
+                                    <td>150</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td><a href="./shunelkight.html#機・シュネルカイトエッジ" class="btn-sticky" disabled="true" target="_blank">詳細</a></td>
+                                </tr>
+                                <tr edge kaminari>
+                                    <td>光・シュネルカイトエッジ</td>
+                                    <td>刃</td>
+                                    <td>雷</td>
+                                    <td>162</td>
+                                    <td>0</td>
+                                    <td>1639</td>
+                                    <td>1248</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>47</td>
+                                    <td>47</td>
+                                    <td>150</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td><a href="./shunelkight.html#光・シュネルカイトエッジ" class="btn-sticky" disabled="true" target="_blank">詳細</a></td>
+                                </tr>
+                                <tr ken kaminari>
+                                    <td>機・ザルニーツブレード</td>
+                                    <td>剣</td>
+                                    <td>雷</td>
+                                    <td>162</td>
+                                    <td>0</td>
+                                    <td>1903</td>
+                                    <td>1368</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>126</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td><a href="./zarnica.html#機・ザルニーツブレード" class="btn-sticky" disabled="true" target="_blank">詳細</a></td>
+                                </tr>
+                                <tr tate kaminari>
+                                    <td>機・ザルニーツシールド</td>
+                                    <td>盾</td>
+                                    <td>雷</td>
+                                    <td>162</td>
+                                    <td>0</td>
+                                    <td>1467</td>
+                                    <td>1318</td>
+                                    <td>470</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>144</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td><a href="./zarnica.html#機・ザルニーツシールド" class="btn-sticky" disabled="true" target="_blank">詳細</a></td>
+                                </tr>
+                                <tr tue kaminari>
+                                    <td>機・ザルニーツロッド</td>
+                                    <td>杖</td>
+                                    <td>雷</td>
+                                    <td>162</td>
+                                    <td>0</td>
+                                    <td>1218</td>
+                                    <td>2054</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>126</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td><a href="./zarnica.html#機・ザルニーツロッド" class="btn-sticky" disabled="true" target="_blank">詳細</a></td>
+                                </tr>
+                                <tr book kaminari>
+                                    <td>機・ザルニーツブック</td>
+                                    <td>本</td>
+                                    <td>雷</td>
+                                    <td>162</td>
+                                    <td>0</td>
+                                    <td>1186</td>
+                                    <td>1352</td>
+                                    <td>0</td>
+                                    <td>470</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>137</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td><a href="./zarnica.html#機・ザルニーツブック" class="btn-sticky" disabled="true" target="_blank">詳細</a></td>
+                                </tr>
+                                <tr gun kaminari>
+                                    <td>機・ザルニーツカノン</td>
+                                    <td>銃</td>
+                                    <td>雷</td>
+                                    <td>162</td>
+                                    <td>0</td>
+                                    <td>1167</td>
+                                    <td>1535</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>47</td>
+                                    <td>47</td>
+                                    <td>150</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td><a href="./zarnica.html#機・ザルニーツカノン" class="btn-sticky" disabled="true" target="_blank">詳細</a></td>
+                                </tr>
+                                <tr edge kaminari>
+                                    <td>機・ザルニーツエッジ</td>
+                                    <td>刃</td>
+                                    <td>雷</td>
+                                    <td>162</td>
+                                    <td>0</td>
+                                    <td>1535</td>
+                                    <td>1170</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>47</td>
+                                    <td>47</td>
+                                    <td>150</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td><a href="./zarnica.html#機・ザルニーツエッジ" class="btn-sticky" disabled="true" target="_blank">詳細</a></td>
+                                </tr>
+                                <tr ken hi>
+                                    <td>機・魔王剣</td>
+                                    <td>剣</td>
+                                    <td>火</td>
+                                    <td>162</td>
+                                    <td>0</td>
+                                    <td>1959</td>
+                                    <td>1415</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>129</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td><a href="./disgaea.html#機・魔王剣" class="btn-sticky" disabled="true" target="_blank">詳細</a></td>
+                                </tr>
+                                <tr ken hi>
+                                    <td>光・魔王剣</td>
+                                    <td>剣</td>
+                                    <td>火</td>
+                                    <td>162</td>
+                                    <td>0</td>
+                                    <td>1959</td>
+                                    <td>1415</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>129</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td><a href="./disgaea.html#光・魔王剣" class="btn-sticky" disabled="true" target="_blank">詳細</a></td>
+                                </tr>
+                                <tr tate yami>
+                                    <td>機・プリニーシールド</td>
+                                    <td>盾</td>
+                                    <td>闇</td>
+                                    <td>162</td>
+                                    <td>0</td>
+                                    <td>1467</td>
+                                    <td>1318</td>
+                                    <td>470</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>144</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td><a href="./disgaea.html#機・プリニーシールド" class="btn-sticky" disabled="true" target="_blank">詳細</a></td>
+                                </tr>
+                                <tr tate yami>
+                                    <td>光・プリニーシールド</td>
+                                    <td>盾</td>
+                                    <td>闇</td>
+                                    <td>162</td>
+                                    <td>0</td>
+                                    <td>1467</td>
+                                    <td>1318</td>
+                                    <td>470</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>144</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td><a href="./disgaea.html#光・プリニーシールド" class="btn-sticky" disabled="true" target="_blank">詳細</a></td>
+                                </tr>
+                                <tr tue hikari>
+                                    <td>機・ピュアスティック</td>
+                                    <td>杖</td>
+                                    <td>光</td>
+                                    <td>162</td>
+                                    <td>0</td>
+                                    <td>1218</td>
+                                    <td>2054</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>126</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td><a href="./disgaea.html#機・ピュアスティック" class="btn-sticky" disabled="true" target="_blank">詳細</a></td>
+                                </tr>
+                                <tr tue hikari>
+                                    <td>光・ピュアスティック</td>
+                                    <td>杖</td>
+                                    <td>光</td>
+                                    <td>162</td>
+                                    <td>0</td>
+                                    <td>1218</td>
+                                    <td>2054</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>126</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td><a href="./disgaea.html#光・ピュアスティック" class="btn-sticky" disabled="true" target="_blank">詳細</a></td>
+                                </tr>
+                                <tr book hikari>
+                                    <td>機・愛導書</td>
+                                    <td>本</td>
+                                    <td>光</td>
+                                    <td>162</td>
+                                    <td>0</td>
+                                    <td>1186</td>
+                                    <td>1352</td>
+                                    <td>0</td>
+                                    <td>470</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>137</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td><a href="./disgaea.html#機・愛導書" class="btn-sticky" disabled="true" target="_blank">詳細</a></td>
+                                </tr>
+                                <tr book hikari>
+                                    <td>光・愛導書</td>
+                                    <td>本</td>
+                                    <td>光</td>
+                                    <td>162</td>
+                                    <td>0</td>
+                                    <td>1186</td>
+                                    <td>1352</td>
+                                    <td>0</td>
+                                    <td>470</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>137</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td><a href="./disgaea.html#光・愛導書" class="btn-sticky" disabled="true" target="_blank">詳細</a></td>
+                                </tr>
+                                <tr gun yami>
+                                    <td>機・エルダーカノン</td>
+                                    <td>銃</td>
+                                    <td>闇</td>
+                                    <td>162</td>
+                                    <td>0</td>
+                                    <td>1167</td>
+                                    <td>1535</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>47</td>
+                                    <td>47</td>
+                                    <td>150</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td><a href="./disgaea.html#機・エルダーカノン" class="btn-sticky" disabled="true" target="_blank">詳細</a></td>
+                                </tr>
+                                <tr gun yami>
+                                    <td>光・エルダーカノン</td>
+                                    <td>銃</td>
+                                    <td>闇</td>
+                                    <td>162</td>
+                                    <td>0</td>
+                                    <td>1167</td>
+                                    <td>1535</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>47</td>
+                                    <td>47</td>
+                                    <td>150</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td><a href="./disgaea.html#光・エルダーカノン" class="btn-sticky" disabled="true" target="_blank">詳細</a></td>
+                                </tr>
+                                <tr edge hi>
+                                    <td>機・魔王刃</td>
+                                    <td>刃</td>
+                                    <td>火</td>
+                                    <td>162</td>
+                                    <td>0</td>
+                                    <td>1535</td>
+                                    <td>1170</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>47</td>
+                                    <td>47</td>
+                                    <td>150</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td><a href="./disgaea.html#機・魔王刃" class="btn-sticky" disabled="true" target="_blank">詳細</a></td>
+                                </tr>
+                                <tr edge hi>
+                                    <td>光・魔王刃</td>
+                                    <td>刃</td>
+                                    <td>火</td>
+                                    <td>162</td>
+                                    <td>0</td>
+                                    <td>1535</td>
+                                    <td>1170</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>47</td>
+                                    <td>47</td>
+                                    <td>150</td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td><a href="./disgaea.html#光・魔王刃" class="btn-sticky" disabled="true" target="_blank">詳細</a></td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </details>
+                </div>
+            </div>
+            <br>
+            <div id="body-bk">
+                <div id="body">
+                    <details open="true">
+                        <summary class="leftside">防具一覧</summary>
+                        <br>
+                        <div id="junbityu">
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <br>
+            <div id="body-bk">
+                <div id="body">
+                    <details open="true">
+                        <summary class="leftside">装飾一覧</summary>
+                        <br>
+                        <div id="junbityu">
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

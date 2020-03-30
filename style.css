@@ -1,0 +1,468 @@
+
+html, body{
+    margin: 0;
+    padding: 0;
+    width:100%;
+    height:100%;
+    background: #f1f0ef;
+}
+
+body#homepage_body
+{
+    background-size: cover;
+}
+body#dash_body
+{
+    background-size: cover;
+}
+
+.btn-square-shadow{
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #6a6e6e;
+    color: #000;
+    font-size: 70%;
+    border: solid 1px rgba(108,116,133,1);
+    border-radius : 10px;
+}
+
+.btn-square-shadow:active{
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+    box-shadow: 0px 0px 1px rgba(0,0,0,0.2);
+    border-bottom: none;
+}
+
+h1 {
+    color: #000;
+    border-bottom: dashed 2px #000;
+}
+
+div#header-fixed
+{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 25px;
+    z-index: 1;
+}
+
+div#header-bk{
+    background: linear-gradient(to bottom, rgba(74,142,220,1),rgba(0,58,125,1),rgba(47,78,125,1));
+    padding:10px 0 20px;
+    height:40px;
+    width:100%;
+    z-index: 1;
+}
+
+div#header{
+    height:100%;
+    width: 95%;
+    margin: auto;
+    z-index: 1;
+}
+
+div#body-bk{
+    padding:10px 0 10px 0;
+    /* 
+    background-image:url("images.jpg");
+    background-size:cover;
+    */
+    width:97%;
+    margin: auto;
+    background: rgba(255,255,255,1);
+
+
+}
+
+div#body{
+    text-align: center;
+    width:97%;
+    margin:auto;
+    
+}
+
+.copyright{
+    text-align: right;
+    color: #FFF;
+}
+
+.leftside{
+    text-align: left;
+}
+
+.rightside{
+    text-align: right;
+}
+
+table, th, td {
+    border-collapse: collapse;
+    border: 1px solid #FFF;
+    line-height: 1.5;
+}
+
+table.type06 th {
+    width: 150px;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    border-right: 1px solid rgb(108,116,133,1);
+    border-bottom: 3px solid rgba(108,116,133,1);
+    background: rgba(173,183,195,1);
+    text-align: left;
+    color: #000;
+}
+
+table.type06 td {
+    width:370px;
+    padding:10px;
+    vertical-align: top;
+}
+
+table.type06 tbody td {
+    border-right: 1px solid #F4F4F4;
+    width:370px;
+    padding: 10px;
+    vertical-align: top;
+    background: #f4f4f4;
+}
+
+table.type06 tr:nth-child(odd) td{
+    border-right: 1px solid rgba(210,210,210,1);
+    background-color: rgba(229,235,241,1);
+}
+
+table.type tr:nth-child(even) td{
+    border-right: 1px solid rgba(210,210,210,1);
+    background-color: rgba(255,255,255,1);
+}
+
+.btn-sticky {
+    display:inline-block;
+    text-align: left;
+    color: rgba(23,93,181,1);
+    font-size:16px;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px rgba(255,255,255,1);
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.btn-sticky:hover {
+    opacity: 0.8;
+}
+
+.btn-stick:active{
+    box-shadow: inset 0 0 2px rgba(128,128,128,0.1);
+    transform: translateY(2px);
+}   
+
+/* === ソートボタンを表示するエリア ============== */
+.tsImgArea{
+    line-height: 1;
+  }
+  /* === ソートボタン ============================== */
+  .tsImg{
+    display    : inline-block;
+    width      : 8px;
+    height     : 6px;
+    background : #eee;
+    border     : 1px solid #777;
+    margin     : 1px 3px;
+    padding    : 3px;
+    cursor     : pointer;
+  }
+  /* === ソートボタン（カーソルオーバー時）========= */
+  .tsImg:hover{
+    background : #FFD700;
+  }
+  /* === ソートボタン内の三角の色（SVG）============ */
+  .tsImg path{
+    fill       : #777;
+  }
+
+  #myTable .tablesorter-header {
+    cursor: pointer;
+    outline: none;
+  }
+  #myTable .tablesorter-header-inner::after { 
+    content: '▼';
+    font-size: 12px;
+    margin-left: 5px;
+  }
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	/* background-color: #1b2538; */ 
+}
+li {
+	float: left;
+	border-right: 1px solid #bbbbbb;
+}
+li:last-child {
+	border-right: none;
+}
+li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+li a:hover:not(.active) {
+	background-color: #a9bce2;
+}
+.active {
+    background-color: #da3c41; 
+}
+
+div#header2 {
+    list-style-type: none;
+	margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url("head_magatsu-wahrheit-1.jpg");
+    /*background-size : cover;*/
+}
+
+.allNoDisplay tr:not(.colTitle) {display: none;}
+.ken        tr[ken]         {display: table-row;}
+.tate    tr[tate]     {display: table-row;}
+.book         tr[book]          {display: table-row;}
+.tue         tr[tue]          {display: table-row;}
+.edge         tr[edge]          {display: table-row;}
+.gun         tr[gun]          {display: table-row;}
+
+.colTitle {
+    width: 150px;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    border-right: 1px solid rgb(108,116,133,1);
+    border-bottom: 3px solid rgba(108,116,133,1);
+    background: rgba(173,183,195,1);
+    text-align: left;
+    color: #000;
+}
+
+.allNoDisplay tr:nth-child(odd) td{
+    border-right: 1px solid rgba(210,210,210,1);
+    background-color: rgba(229,235,241,1);
+}
+.allNoDisplay tr:nth-child(even) td{
+    border-right: 1px solid rgba(210,210,210,1);
+    background-color: rgba(255,255,255,1);
+}
+.ken tr:nth-child(odd) td{
+    border-right: 1px solid rgba(210,210,210,1);
+    background-color: rgba(229,235,241,1);
+}
+.ken tr:nth-child(even) td{
+    border-right: 1px solid rgba(210,210,210,1);
+    background-color: rgba(255,255,255,1);
+}
+
+.tate tr:nth-child(odd) td{
+    border-right: 1px solid rgba(210,210,210,1);
+    background-color: rgba(229,235,241,1);
+}
+.tate tr:nth-child(even) td{
+    border-right: 1px solid rgba(210,210,210,1);
+    background-color: rgba(255,255,255,1);
+}
+
+.book tr:nth-child(odd) td{
+    border-right: 1px solid rgba(210,210,210,1);
+    background-color: rgba(229,235,241,1);
+}
+.book tr:nth-child(even) td{
+    border-right: 1px solid rgba(210,210,210,1);
+    background-color: rgba(255,255,255,1);
+}
+
+.tue tr:nth-child(odd) td{
+    border-right: 1px solid rgba(210,210,210,1);
+    background-color: rgba(229,235,241,1);
+}
+.tue tr:nth-child(even) td{
+    border-right: 1px solid rgba(210,210,210,1);
+    background-color: rgba(255,255,255,1);
+}
+
+.edge tr:nth-child(odd) td{
+    border-right: 1px solid rgba(210,210,210,1);
+    background-color: rgba(229,235,241,1);
+}
+.edge tr:nth-child(even) td{
+    border-right: 1px solid rgba(210,210,210,1);
+    background-color: rgba(255,255,255,1);
+}
+
+.gun tr:nth-child(odd) td{
+    border-right: 1px solid rgba(210,210,210,1);
+    background-color: rgba(229,235,241,1);
+}
+.gun tr:nth-child(even) td{
+    border-right: 1px solid rgba(210,210,210,1);
+    background-color: rgba(255,255,255,1);
+}
+
+.allNoDisplay2 tr:not(.colTitle) {display: none;}
+.mu        tr[mu]         {display: table-row;}
+.hi        tr[hi]         {display: table-row;}
+.mizu    tr[mizu]     {display: table-row;}
+.kaze         tr[kaze]          {display: table-row;}
+.kaminari         tr[kaminari]          {display: table-row;}
+.tuti         tr[tuti]          {display: table-row;}
+.hikari         tr[hikari]          {display: table-row;}
+.yami         tr[yami]          {display: table-row;}
+
+.mur    tr[hi]  {display: none;}
+.mur    tr[mizu]  {display: none;}
+.mur    tr[kaze]  {display: none;}
+.mur    tr[kaminari]  {display: none;}
+.mur    tr[tuti]  {display: none;}
+.mur    tr[hikari]  {display: none;}
+.mur    tr[yami]  {display: none;}
+
+.hir    tr[mu]  {display: none;}
+.hir    tr[mizu]  {display: none;}
+.hir    tr[kaze]  {display: none;}
+.hir    tr[kaminari]  {display: none;}
+.hir    tr[tuti]  {display: none;}
+.hir    tr[hikari]  {display: none;}
+.hir    tr[yami]  {display: none;}
+
+.mizur    tr[mu]  {display: none;}
+.mizur    tr[hi]  {display: none;}
+.mizur    tr[kaze]  {display: none;}
+.mizur    tr[kaminari]  {display: none;}
+.mizur    tr[tuti]  {display: none;}
+.mizur    tr[hikari]  {display: none;}
+.mizur    tr[yami]  {display: none;}
+
+.kazer    tr[mu]  {display: none;}
+.kazer    tr[hi]  {display: none;}
+.kazer    tr[mizu]  {display: none;}
+.kazer    tr[kaminari]  {display: none;}
+.kazer    tr[tuti]  {display: none;}
+.kazer    tr[hikari]  {display: none;}
+.kazer    tr[yami]  {display: none;}
+
+.kaminarir   tr[mu]  {display: none;}
+.kaminarir   tr[hi]  {display: none;}
+.kaminarir   tr[mizu]  {display: none;}
+.kaminarir   tr[kaze]  {display: none;}
+.kaminarir   tr[tuti]  {display: none;}
+.kaminarir   tr[hikari]  {display: none;}
+.kaminarir   tr[yami]  {display: none;}
+
+.tutir    tr[mu]  {display: none;}
+.tutir    tr[hi]  {display: none;}
+.tutir    tr[mizu]  {display: none;}
+.tutir    tr[kaze]  {display: none;}
+.tutir    tr[kaminari]  {display: none;}
+.tutir    tr[hikari]  {display: none;}
+.tutir    tr[yami]  {display: none;}
+
+.hikarir  tr[mu]  {display: none;}
+.hikarir  tr[hi]  {display: none;}
+.hikarir  tr[mizu]  {display: none;}
+.hikarir  tr[kaze]  {display: none;}
+.hikarir  tr[kaminari]  {display: none;}
+.hikarir  tr[tuti]  {display: none;}
+.hikarir  tr[yami]  {display: none;}
+
+.yamir    tr[mu]  {display: none;}
+.yamir    tr[hi]  {display: none;}
+.yamir    tr[mizu]  {display: none;}
+.yamir    tr[kaze]  {display: none;}
+.yamir    tr[kaminari]  {display: none;}
+.yamir    tr[tuti]  {display: none;}
+.yamir    tr[hikari]  {display: none;}
+
+div#junbityu {
+    background-color:rgba(255,255,255,1);
+    background-image: url("./準備中.jpg");
+    background-size: cover;
+    height:100%;
+    width:100%;
+}
+
+/*最低限タブが機能するのに必要なスタイル*/
+.tab_item {
+    display: none;
+  }
+  
+.is-active-item {
+    display: block;
+}
+
+div#menu-fixed {
+    position: fixed; /* 要素の位置を固定する */
+    top: 90; /* 基準の位置を画面の一番上に指定する */
+    left: 0; /* 基準の位置を画面の一番左に指定する */
+    margin: 0; /* 要素の余白を０にする */
+    padding: 10px; /* 要素内側の余白を指定する */
+    height:90%; /* 高さを指定する */
+    width: 200px; /* 幅を指定する */
+    background: #f3ffff; /* 背景色を指定する */
+    color:black; /* フォントの色を指定する */
+    font-size:20px;
+
+    border : double 4px #333 ;
+}
+
+div#right-gimi {
+    margin-left:230px;
+}
+
+div#left-3 {
+    top: 90; /* 基準の位置を画面の一番上に指定する */
+    left: 50; /* 基準の位置を画面の一番左に指定する */
+    margin: 0; /* 要素の余白を０にする */
+    padding: 10px; /* 要素内側の余白を指定する */
+    height:120px; /* 高さを指定する */
+    width: 77%; /* 幅を指定する */
+    background: #f3ffff; /* 背景色を指定する */
+    color:black; /* フォントの色を指定する */
+    font-size:20px;
+    margin-left:10%;
+
+    border : double 4px #333 ;
+}
+div#center-3 {
+    top: 270; /* 基準の位置を画面の一番上に指定する */
+    left: 50; /* 基準の位置を画面の一番左に指定する */
+    margin: 0; /* 要素の余白を０にする */
+    padding: 10px; /* 要素内側の余白を指定する */
+    height:140px; /* 高さを指定する */
+    width: 77%; /* 幅を指定する */
+    background: #f3ffff; /* 背景色を指定する */
+    color:black; /* フォントの色を指定する */
+    font-size:20px;
+    margin-left:10%;
+
+    border : double 4px #333 ;
+}
+div#right-3 {
+    top: 430; /* 基準の位置を画面の一番上に指定する */
+    left: 50; /* 基準の位置を画面の一番左に指定する */
+    margin: 0; /* 要素の余白を０にする */
+    padding: 10px; /* 要素内側の余白を指定する */
+    height:60px; /* 高さを指定する */
+    width: 77%; /* 幅を指定する */
+    background: #f3ffff; /* 背景色を指定する */
+    color:black; /* フォントの色を指定する */
+    font-size:20px;
+    margin-left:10%;
+
+    border : double 4px #333 ;
+}
